@@ -4,22 +4,22 @@ using namespace std;
 void solve(int t) {
   int n;
   cin >> n;
-  vector<int> v(n);
+  vector<int> prices(n);
   for (int i = 0; i < n; ++i)
-    cin >> v[i];
+    cin >> prices[i];
 
-  long long sum = 0;
-  int maxp = v[n - 1];
-  for (int i = n - 1; i >= 0; --i) {
-    int curp = v[i];
-    if (curp >= maxp) {
-      maxp = curp;
-    } else if (curp < maxp) {
-      sum += (maxp - curp);
+  long long profit = 0;
+  int max_price = prices[n - 1];
+  for (int i = n - 2; i >= 0; --i) {
+    int price = prices[i];
+    if (price >= max_price) {
+      max_price = price;
+    } else {
+      profit += (max_price - price);
     }
   }
 
-  cout << '#' << t << ' ' << sum << '\n';
+  cout << '#' << t << ' ' << profit << '\n';
 }
 
 int main() {
