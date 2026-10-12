@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
+  int a = 55;
+  int b = 10;
+  printf("%d - %d = %d\n", a, b, a - b);
+  a = 2008;
+  b = 1999;
+  printf("%d - %d = %d\n", a, b, a - b);
+}
